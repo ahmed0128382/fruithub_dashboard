@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "269354342254",
+    "project_id": "fakahani-e-commerce",
+    "storage_bucket": "fakahani-e-commerce.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269354342254:android:be6d1d61ede2d8b1bd937f",
+        "android_client_info": {
+          "package_name": "com.example.fruit_hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269354342254-6a3t7n7qh7tvblptd8c1it8euplm7t7o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fruit_hub",
+            "certificate_hash": "cdce131ace42519926cd24aef11787ab2944a991"
+          }
+        },
+        {
+          "client_id": "269354342254-gqabhqf5e0ble5cs9pdiuk9lr64qs0fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOBaJ5VPFwGDDr0wPr8xvRddMOKfR-7qM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269354342254-gqabhqf5e0ble5cs9pdiuk9lr64qs0fo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "269354342254-42vkiq9bs1ogj0pbqfu12lhbpg6o75vl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fruithubDashboard"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269354342254:android:4df48689a99131fbbd937f",
+        "android_client_info": {
+          "package_name": "com.example.fruithub_dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269354342254-gqabhqf5e0ble5cs9pdiuk9lr64qs0fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOBaJ5VPFwGDDr0wPr8xvRddMOKfR-7qM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269354342254-gqabhqf5e0ble5cs9pdiuk9lr64qs0fo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "269354342254-42vkiq9bs1ogj0pbqfu12lhbpg6o75vl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fruithubDashboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const FruitHubDashboard());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class FruitHubDashboard extends StatelessWidget {
+  const FruitHubDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
