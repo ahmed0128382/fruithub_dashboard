@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruithub_dashboard/core/helper/on_generate_route.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fruithub_dashboard/features/dashboard/presentation/views/dashboard_view.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -17,12 +18,9 @@ class FruitHubDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      initialRoute: DashboardView.routeName,
       onGenerateRoute: onGenerateRoute,
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: DashboardView(),
     );
   }
 }
