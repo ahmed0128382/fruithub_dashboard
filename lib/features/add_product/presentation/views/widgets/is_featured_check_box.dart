@@ -27,12 +27,10 @@ class _IsFeaturedCheckBoxState extends State<IsFeaturedCheckBox> {
           },
         ),
         SizedBox(width: 16.0),
-        Expanded(
-          child: Text(
-            'Is Featured Item?',
-            style: AppStyles.semiBold16.copyWith(
-              color: AppColors.primaryColor,
-            ),
+        Text(
+          'Is Featured Item?',
+          style: AppStyles.semiBold16.copyWith(
+            color: AppColors.primaryColor,
           ),
         ),
       ],

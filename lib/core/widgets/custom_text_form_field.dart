@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
       onSaved: onSaved,
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'هذا الحقل مطلوب';
+          return 'this field is required';
         }
       },
       keyboardType: textInputType,

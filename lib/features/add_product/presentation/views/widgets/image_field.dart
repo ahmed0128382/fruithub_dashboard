@@ -86,6 +86,7 @@ class _ImageFieldState extends State<ImageField> {
                 onPressed: () {
                   _image = null;
                   _imageBytes = null;
+                  widget.onFileSelected(null);
                   setState(() {});
                 },
                 padding: EdgeInsets.all(8),
