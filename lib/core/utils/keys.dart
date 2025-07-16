@@ -1,0 +1,3 @@
+const String kSupabaseUrl = 'https://orcpdxpuacfdvclnyxep.supabase.co';
+const String kSupabaseKey =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9yY3BkeHB1YWNmZHZjbG55eGVwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1ODIxNzEsImV4cCI6MjA2ODE1ODE3MX0.8aLks6TnE6N4M9OakNy1llBpe6FBliVrlCE8quRZUWM';
