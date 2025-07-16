@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruithub_dashboard/core/helper/on_generate_route.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:fruithub_dashboard/core/services/get_it_service.dart';
 import 'package:fruithub_dashboard/core/services/supabase_storage_service.dart';
 import 'package:fruithub_dashboard/features/dashboard/presentation/views/dashboard_view.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -13,7 +14,7 @@ void main() async {
   );
   await SupabaseStorageService.initSupabase();
   final supabase = Supabase.instance.client;
-
+  setupGetIt();
   runApp(const FruitHubDashboard());
 }
 

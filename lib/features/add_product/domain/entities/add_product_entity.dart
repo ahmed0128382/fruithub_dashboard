@@ -5,7 +5,7 @@ class AddProductEntity {
   final dynamic image;
   final String code;
   final bool isFeatured;
-  final String? imageUrl;
+  String? imageUrl;
 
   AddProductEntity({
     required this.name,
