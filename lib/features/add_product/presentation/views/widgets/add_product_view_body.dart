@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruithub_dashboard/constants.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_button.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_text_form_field.dart';
 import 'package:fruithub_dashboard/features/add_product/domain/entities/add_product_entity.dart';
+import 'package:fruithub_dashboard/features/add_product/presentation/manager/cubit/add_products_cubit.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/image_field.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/is_featured_check_box.dart';
 
@@ -76,8 +78,10 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         SnackBar(content: Text('Please select an image')),
                       );
                     } else {
+                      //validate form fields first before adding product
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
+                        //create add product entity
                         AddProductEntity addProductEntity = AddProductEntity(
                           name: name,
                           price: price,
@@ -86,6 +90,11 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                           isFeatured: isFeatured,
                           image: file,
                         );
+                        //trigger add product
+                        context
+                            .read<AddProductsCubit>()
+                            .addProduct(addProductEntity);
+                        //show snackbar with success message
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(content: Text('Product added successfully')),
                         );
