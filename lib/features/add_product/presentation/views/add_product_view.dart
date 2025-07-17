@@ -5,7 +5,7 @@ import 'package:fruithub_dashboard/core/repos/products_repo/products_repo.dart';
 import 'package:fruithub_dashboard/core/services/get_it_service.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_app_bar.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/manager/cubit/add_products_cubit.dart';
-import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/add_product_view_body.dart';
+import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/add_products_view_body_bloc_consumer.dart';
 
 class AddProductView extends StatelessWidget {
   const AddProductView({super.key});
@@ -17,7 +17,7 @@ class AddProductView extends StatelessWidget {
       body: BlocProvider(
         create: (context) => AddProductsCubit(
             getIt.get<ImagesRepo>(), getIt.get<ProductsRepo>()),
-        child: const AddProductViewBody(),
+        child: const AddProductsViewBodyBlocConsumer(),
       ),
     );
   }

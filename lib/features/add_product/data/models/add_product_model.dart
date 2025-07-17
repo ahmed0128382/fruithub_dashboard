@@ -32,7 +32,6 @@ class AddProductModel {
       'name': name,
       'description': description,
       'price': price,
-      'image': image,
       'code': code,
       'isFeatured': isFeatured,
       'imageUrl': imageUrl,

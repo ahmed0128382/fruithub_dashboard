@@ -94,10 +94,6 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         context
                             .read<AddProductsCubit>()
                             .addProduct(addProductEntity);
-                        //show snackbar with success message
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text('Product added successfully')),
-                        );
                       } else {
                         setState(() {
                           autovalidateMode = AutovalidateMode.always;
