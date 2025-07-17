@@ -8,6 +8,12 @@ class AddProductModel {
   final String code;
   final bool isFeatured;
   String? imageUrl;
+  final int expirationMonths;
+  final bool isOrganic;
+  final int noOfCalories;
+  final int unitAmount;
+  final num avgRating;
+  final num ratingsCount;
 
   AddProductModel({
     required this.name,
@@ -17,16 +23,29 @@ class AddProductModel {
     required this.code,
     required this.isFeatured,
     this.imageUrl,
+    required this.expirationMonths,
+    this.isOrganic = false,
+    required this.noOfCalories,
+    required this.unitAmount,
+    this.avgRating = 0,
+    this.ratingsCount = 0,
   });
   factory AddProductModel.fromEntity(AddProductEntity product) =>
       AddProductModel(
-          name: product.name,
-          description: product.description,
-          price: product.price,
-          image: product.image,
-          code: product.code,
-          isFeatured: product.isFeatured,
-          imageUrl: product.imageUrl);
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        image: product.image,
+        code: product.code,
+        isFeatured: product.isFeatured,
+        imageUrl: product.imageUrl,
+        expirationMonths: product.expirationMonths,
+        isOrganic: product.isOrganic,
+        noOfCalories: product.noOfCalories,
+        unitAmount: product.unitAmount,
+        //avgRating: product.avgRating,
+        //ratingsCount: product.ratingsCount
+      );
   toJson() {
     return {
       'name': name,
@@ -35,6 +54,12 @@ class AddProductModel {
       'code': code,
       'isFeatured': isFeatured,
       'imageUrl': imageUrl,
+      'expirationMonths': expirationMonths,
+      'isOrganic': isOrganic,
+      'noOfCalories': noOfCalories,
+      'unitAmount': unitAmount,
+      //'avgRating': avgRating,
+      //'ratingsCount': ratingsCount
     };
   }
 }

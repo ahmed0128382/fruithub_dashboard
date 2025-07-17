@@ -6,6 +6,12 @@ class AddProductEntity {
   final String code;
   final bool isFeatured;
   String? imageUrl;
+  final int expirationMonths;
+  final bool isOrganic;
+  final int noOfCalories;
+  final int unitAmount;
+  final num avgRating;
+  final num ratingsCount;
 
   AddProductEntity({
     required this.name,
@@ -15,5 +21,11 @@ class AddProductEntity {
     required this.code,
     required this.isFeatured,
     this.imageUrl,
+    required this.expirationMonths,
+    this.isOrganic = false,
+    required this.noOfCalories,
+    required this.unitAmount,
+    this.avgRating = 0,
+    this.ratingsCount = 0,
   });
 }
