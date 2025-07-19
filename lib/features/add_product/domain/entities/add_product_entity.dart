@@ -1,3 +1,5 @@
+import 'package:fruithub_dashboard/features/add_product/domain/entities/review_entity.dart';
+
 class AddProductEntity {
   final String name;
   final String description;
@@ -12,8 +14,10 @@ class AddProductEntity {
   final int unitAmount;
   final num avgRating;
   final num ratingsCount;
+  final List<ReviewEntity> reviews;
 
   AddProductEntity({
+    required this.reviews,
     required this.name,
     required this.description,
     required this.price,

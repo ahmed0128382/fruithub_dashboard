@@ -120,7 +120,8 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                             isOrganic: isOrganic,
                             expirationMonths: expirationMonths.toInt(),
                             noOfCalories: noOfCalories.toInt(),
-                            unitAmount: unitAmount.toInt());
+                            unitAmount: unitAmount.toInt(),
+                            reviews: []);
                         //trigger add product
                         context
                             .read<AddProductsCubit>()
