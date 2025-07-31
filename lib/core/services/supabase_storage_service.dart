@@ -19,7 +19,8 @@ class SupabaseStorageService implements StorageService {
     }
 
     if (!isBucketExists) {
-      await _supabase.client.storage.createBucket(bucketName);
+      // dont create bucket manually
+      // await _supabase.client.storage.createBucket(bucketName);
     }
   }
 
@@ -34,9 +35,12 @@ class SupabaseStorageService implements StorageService {
   Future<String> uploadFile(File file, String path) async {
     String fileName = basename(file.path);
     String extensionName = extension(file.path);
-    var response = await _supabase.client.storage
+    await _supabase.client.storage
         .from(fruitBucketName)
         .upload('$path/$fileName.$extensionName', file);
-    return response;
+    var publicUrl = _supabase.client.storage
+        .from(fruitBucketName)
+        .getPublicUrl('$path/$fileName.$extensionName');
+    return publicUrl;
   }
 }

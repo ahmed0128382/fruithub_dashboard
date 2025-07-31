@@ -15,6 +15,7 @@ class AddProductModel {
   final int unitAmount;
   final num avgRating;
   final num ratingsCount;
+  final int sellingCount;
   final List<ReviewModel> reviews;
 
   AddProductModel(
@@ -31,6 +32,7 @@ class AddProductModel {
       required this.unitAmount,
       this.avgRating = 0,
       this.ratingsCount = 0,
+      this.sellingCount = 0,
       required this.reviews});
   factory AddProductModel.fromEntity(AddProductEntity product) =>
       AddProductModel(
@@ -61,6 +63,7 @@ class AddProductModel {
       'isOrganic': isOrganic,
       'noOfCalories': noOfCalories,
       'unitAmount': unitAmount,
+      'sellingCount': sellingCount,
       'reviews': reviews.map((e) => e.toJson()).toList(),
       //'avgRating': avgRating,
       //'ratingsCount': ratingsCount
