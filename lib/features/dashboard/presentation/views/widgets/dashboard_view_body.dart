@@ -1,8 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruithub_dashboard/constants.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_button.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/views/add_product_view.dart';
+import 'package:fruithub_dashboard/features/view_orders/presentation/manager/view_orders_cubit/view_orders_cubit.dart';
 import 'package:fruithub_dashboard/features/view_orders/presentation/views/orders_view.dart';
 
 class DashboardViewBody extends StatelessWidget {
@@ -26,6 +27,7 @@ class DashboardViewBody extends StatelessWidget {
           CustomButton(
               text: 'View Orders',
               onTap: () {
+                context.read<ViewOrdersCubit>().getOrders();
                 Navigator.pushNamed(context, OrdersView.routeName);
               }),
         ],

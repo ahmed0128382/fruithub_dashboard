@@ -1,5 +1,7 @@
 import 'package:fruithub_dashboard/core/repos/images_repo/images_repo.dart';
 import 'package:fruithub_dashboard/core/repos/images_repo/images_repo_impl.dart';
+import 'package:fruithub_dashboard/core/repos/orders_repo/orders_repo.dart';
+import 'package:fruithub_dashboard/core/repos/orders_repo/orders_repo_impl.dart';
 import 'package:fruithub_dashboard/core/repos/products_repo/products_repo.dart';
 import 'package:fruithub_dashboard/core/repos/products_repo/products_repo_impl.dart';
 import 'package:fruithub_dashboard/core/services/data_service.dart';
@@ -18,6 +20,9 @@ void setupGetIt() {
     ImagesRepoImpl(storageService: getIt.get<StorageService>()),
   );
   getIt.registerSingleton<ProductsRepo>(ProductsRepoImpl(
+    databaseService: getIt.get<DatabaseService>(),
+  ));
+  getIt.registerSingleton<OrdersRepo>(OrdersRepoImpl(
     databaseService: getIt.get<DatabaseService>(),
   ));
 }

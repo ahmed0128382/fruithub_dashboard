@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:fruithub_dashboard/core/errors/failure.dart';
 import 'package:fruithub_dashboard/core/repos/orders_repo/orders_repo.dart';
@@ -10,7 +12,7 @@ class OrdersRepoImpl implements OrdersRepo {
   final DatabaseService databaseService;
 
   OrdersRepoImpl({required this.databaseService});
-  @override
+
   @override
   Future<Either<Failure, List<OrderEntity>>> getOrders() async {
     try {
@@ -21,7 +23,10 @@ class OrdersRepoImpl implements OrdersRepo {
           dataList.map((data) => OrderModel.fromJson(data).toEntity()).toList();
       return Right(orders);
     } catch (e) {
-      return Left(ServerFailure(message: 'Could not fetch orders: $e'));
+      log('Could not fetch orders in getOrders in OrdersRepoImpl: $e');
+      return Left(ServerFailure(
+          message:
+              'Could not fetch orders in getOrders in OrdersRepoImpl: $e'));
     }
   }
 }

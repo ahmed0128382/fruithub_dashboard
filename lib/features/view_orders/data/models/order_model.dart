@@ -33,12 +33,13 @@ class OrderModel {
       totalPrice: json['totalPrice'],
       shippingAddressModel:
           ShippingAddressModel.fromJson(json['shippingAddressModel']),
-      orderProducts: json['orderProducts']
-          .map((e) => OrderProductModel.fromJson(e))
+      orderProducts: (json['orderProducts'] as List<dynamic>)
+          .map((e) => OrderProductModel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      paymentMethod: json['paymentMethod'],
+      paymentMethod: json['paymentMethod'] ?? 'PayPal',
     );
   }
+
   OrderEntity toEntity() {
     return OrderEntity(
         uId: uId,

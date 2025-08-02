@@ -38,7 +38,7 @@ class ShippingAddressModel {
     );
   }
 
-  toEntity() {
+  ShippingAddressEntity toEntity() {
     return ShippingAddressEntity(
       email: email,
       name: name,
