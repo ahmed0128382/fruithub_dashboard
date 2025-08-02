@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:fruithub_dashboard/features/add_product/view_orders/data/models/order_model.dart';
+import 'package:fruithub_dashboard/features/view_orders/domain/entities/order_entity.dart';
 
 class OrderItemWidget extends StatelessWidget {
-  final OrderModel order;
+  final OrderEntity order;
 
   const OrderItemWidget({super.key, required this.order});
 
   @override
   Widget build(BuildContext context) {
-    final shipping = order.shippingAddressModel;
+    final shipping = order.shippingAddressEntity;
 
     return Card(
       margin: const EdgeInsets.all(12),

@@ -1,5 +1,6 @@
-import 'package:fruithub_dashboard/features/add_product/view_orders/data/models/order_product_model.dart';
-import 'package:fruithub_dashboard/features/add_product/view_orders/data/models/shipping_address_model.dart';
+import 'package:fruithub_dashboard/features/view_orders/data/models/order_product_model.dart';
+import 'package:fruithub_dashboard/features/view_orders/data/models/shipping_address_model.dart';
+import 'package:fruithub_dashboard/features/view_orders/domain/entities/order_entity.dart';
 
 class OrderModel {
   final String uId;
@@ -37,5 +38,13 @@ class OrderModel {
           .toList(),
       paymentMethod: json['paymentMethod'],
     );
+  }
+  OrderEntity toEntity() {
+    return OrderEntity(
+        uId: uId,
+        totalPrice: totalPrice,
+        shippingAddressEntity: shippingAddressModel.toEntity(),
+        orderProducts: orderProducts.map((e) => e.toEntity()).toList(),
+        paymentMethod: paymentMethod);
   }
 }
